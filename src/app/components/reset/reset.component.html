@@ -2,7 +2,9 @@
   <h2>Reset Counter</h2>
   <div class="form-group">
     <label for="birthDate">Date of Birth:</label>
-    <input type="date" id="birthDate" [(ngModel)]="birthDate">
+    <input matInput
+           type="date" id="birthDate" [(ngModel)]="birthDate">
   </div>
-  <button (click)="resetCounter()">Validate and Reset</button>
+  <button class="footer-button" mat-button
+          (click)="resetCounter()">Validate and Reset</button>
 </div>

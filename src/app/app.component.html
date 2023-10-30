@@ -1,14 +1,17 @@
-<div class="container" [ngClass]="{ 'background-color-1': counterService.getCount() >= 10, 'background-color-2': counterService.getCount() <= -10 }">
-  <h1>Counter App</h1>
-  <p>Counter: {{ counterService.getCount() }}</p>
+<mat-card class="container" [ngClass]="{ 'background-color-1': counterService.getCount() >= 10, 'background-color-2': counterService.getCount() <= -10 }">
+  <mat-card-header class="header">
+    <h1>Counter App</h1>
+    <p>Counter: {{ counterService.getCount() }}</p>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-toolbar class="router-navigation">
+      <button mat-button routerLink="/up">Go to Up Page</button>
+      <button mat-button routerLink="/down">Go to Down Page</button>
 
-<div class="router-navigation">
-  <button routerLink="/up">Go to Up Page</button>
-  <button routerLink="/down">Go to Down Page</button>
-
-  <button routerLink="/reset">Reset</button>
-</div>
-
-
-  <router-outlet></router-outlet>
-</div>
+      <button mat-button routerLink="/reset">Reset</button>
+    </mat-toolbar>
+  </mat-card-content>
+  <mat-card-footer class="footer">
+    <router-outlet></router-outlet>
+  </mat-card-footer>
+</mat-card>

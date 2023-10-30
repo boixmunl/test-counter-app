@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
-const DEFAULT_COUNTER_NUMBER = 1;
+const DEFAULT_COUNTER_NUMBER = 0;
 const ACTIONS_THRESHOLD = 30;
 @Injectable({
   providedIn: 'root'
 })
 export class CounterService {
   private counter: number = DEFAULT_COUNTER_NUMBER;
-  private actionNumber =1;
+  private actionNumber =0;
   private multiplier = 1;
   private lastAction: LastAction = LastAction.undefined;
   constructor() { }
@@ -50,7 +50,7 @@ export class CounterService {
   }
 
   public resetActionNumber() {
-    this.actionNumber = 1;
+    this.actionNumber = 0;
   }
 
   public getCount(): number{
