@@ -6,11 +6,14 @@ const ACTIONS_THRESHOLD = 30;
   providedIn: 'root'
 })
 export class CounterService {
-  private counter: number = DEFAULT_COUNTER_NUMBER;
+  private counter: number;
   private actionNumber =0;
   private multiplier = 1;
   private lastAction: LastAction = LastAction.undefined;
-  constructor() { }
+  constructor() {
+    const storedCounter = localStorage.getItem('contador');
+    this.counter = storedCounter ? parseInt(storedCounter, 10) : DEFAULT_COUNTER_NUMBER;
+  }
 
   public increaseCounter() {
     if (this.lastAction === LastAction.decrease) {
@@ -20,6 +23,8 @@ export class CounterService {
     this.manageMultiplier();
     this.counter+=this.multiplier;
     this.lastAction = LastAction.increase;
+
+    localStorage.setItem('contador', this.counter.toString());
   }
 
   public decreaseCounter() {
@@ -30,6 +35,8 @@ export class CounterService {
     this.manageMultiplier();
     this.counter-=this.multiplier;
     this.lastAction = LastAction.decrease;
+
+    localStorage.setItem('contador', this.counter.toString());
   }
 
   public manageMultiplier(){
@@ -43,6 +50,8 @@ export class CounterService {
 
   public resetCounter() {
     this.counter = DEFAULT_COUNTER_NUMBER;
+
+    localStorage.setItem('contador', this.counter.toString());
   }
 
   public resetMultiplier() {

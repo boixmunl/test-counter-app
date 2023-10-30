@@ -8,6 +8,7 @@ describe('CounterService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(CounterService);
+    service.resetCounter();
   });
 
   it('should be created', () => {
