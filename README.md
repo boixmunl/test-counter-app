@@ -1,27 +1,36 @@
 # DemoApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 
-## Development server
+## Project explanation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Since the coding time is limited to 1h, I decided the following approaches:
 
-## Code scaffolding
+### Code structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I generated 3 components to increase, decrease and reset the counter. And the counter itself is in the main component
 
-## Build
+I created one service in order to contain the logical related to the counter and accessible to all components.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+I tried to be the cleanest possible (put all possible logical part in the service, variables private, getters and setters, name of the variables and functions, etc.)
 
-## Running unit tests
+I created a simple routing to manage all the routes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Appearence
 
-## Running end-to-end tests
+I decided no waste much time in this part, so I used Angular Material and a minimum set of custom css rules
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Unit tests
 
-## Further help
+In a similar way that the last point, I created and made some unit tests only for the counter service in order to demonstrate that it's important to cover the code
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Data persistance
+
+I used local storage in order to store the counter value
+
+## Other observations
+
+In the test description is proposed to use "services, classes, observable, EventEmitter etc…", but since everything "should be logical", I considered not using nonsense concepts like Observables nor EventEmitter because they not provide any advantage for this technical test
+
+I used a simple template form without form-validation to not waste time.
+
+I tried to do a realistic solution for 1h coding. I could do it better with more dedication time, but I centered to solve it respecting the given time.
